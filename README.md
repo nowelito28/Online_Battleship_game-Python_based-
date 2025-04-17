@@ -36,25 +36,38 @@ Online_Battleship_game-Python_based-/
 
 ### Running the Game
 
-To start the server:
+#### 🖥️ Start the Server
 
+You must pass three arguments:
 ```bash
-python run_server.py
+python servidor.py <port> <max_simultaneous_games> <ranking_file>
 ```
 
-To run a player (in another terminal or machine):
-
+**Example:**
 ```bash
-python cliente.py
+python servidor.py 12345 2 ranking.txt
 ```
 
-> 🧠 You can run multiple clients locally for testing purposes.
+- `port`: The TCP port the server will listen on
+- `max_simultaneous_games`: Maximum number of active games at once
+- `ranking_file`: Path to the file used to store the player rankings
 
-### Multiplayer Mode
+#### 🎮 Start a Client
 
-1. Launch the server with `run_server.py`
-2. Open multiple terminals and run `cliente.py` in each
-3. Players are added to the lobby and matched automatically
+You must pass two arguments:
+```bash
+python cliente.py <server_ip> <port>
+```
+
+**Example:**
+```bash
+python cliente.py 127.0.0.1 12345
+```
+
+- `server_ip`: The IP address of the machine running the server (use `localhost` if local)
+- `port`: Must match the server’s port
+
+> 🧠 You can open multiple terminals and run clients simultaneously to simulate multiplayer locally.
 
 ---
 
